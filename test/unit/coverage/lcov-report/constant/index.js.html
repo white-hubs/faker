@@ -1,0 +1,2268 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for constant/index.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">constant</a> index.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527
+528
+529
+530
+531
+532
+533
+534
+535
+536
+537
+538
+539
+540
+541
+542
+543
+544
+545
+546
+547
+548
+549
+550
+551
+552
+553
+554
+555
+556
+557
+558
+559
+560
+561
+562
+563
+564
+565
+566
+567
+568
+569
+570
+571
+572
+573
+574
+575
+576
+577
+578
+579
+580
+581
+582
+583
+584
+585
+586
+587
+588
+589
+590
+591
+592
+593
+594
+595
+596
+597
+598
+599
+600
+601
+602
+603
+604
+605
+606
+607
+608
+609
+610
+611
+612
+613
+614
+615
+616
+617
+618
+619
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679
+680
+681
+682
+683
+684
+685
+686
+687
+688
+689
+690
+691
+692
+693
+694
+695
+696
+697
+698
+699
+700
+701
+702
+703
+704
+705
+706
+707
+708
+709
+710
+711
+712
+713
+714
+715
+716
+717
+718
+719
+720
+721
+722
+723
+724
+725
+726
+727
+728
+729
+730
+731
+732
+733
+734
+735
+736
+737
+738
+739
+740
+741
+742</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+// import TileWMS from 'ol/source/TileWMS'
+<span class="cstat-no" title="statement not covered" >import Style from 'ol/style/Style'</span>
+<span class="cstat-no" title="statement not covered" >import Stroke from 'ol/style/Stroke'</span>
+<span class="cstat-no" title="statement not covered" >import VectorSource from 'ol/source/Vector'</span>
+<span class="cstat-no" title="statement not covered" >import VectorLayer from 'ol/layer/Vector'</span>
+<span class="cstat-no" title="statement not covered" >import GeoJSON from 'ol/format/GeoJSON'</span>
+<span class="cstat-no" title="statement not covered" >import Fill from 'ol/style/Fill'</span>
+<span class="cstat-no" title="statement not covered" >import Circle from 'ol/style/Circle'</span>
+<span class="cstat-no" title="statement not covered" >import Text from 'ol/style/Text'</span>
+<span class="cstat-no" title="statement not covered" >import Icon from 'ol/style/Icon'</span>
+<span class="cstat-no" title="statement not covered" >import { Geothermal } from './Geothermal'</span>
+// import * as olSize from 'ol/size'
+// 显示层级： 点15 线10 面 5 乡镇名称100
+export const <span class="cstat-no" title="statement not covered" >GEOLOGY_LIST_DATA = {</span>
+  wmsSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Alqs_planningscope&amp;maxFeatures=50&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: new Style({
+      // zIndex: 5,
+      stroke: new Stroke({ // 边界样式
+        color: '#08C6F4',
+        width: 3
+      })
+    })
+  }),
+  // 流域
+  BasinSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Asx_basin&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+      // console.info('featur111111111111111111111111111111111111e', feature)
+<span class="cstat-no" title="statement not covered" >      if (feature.values_.category === 1) {</span>
+        var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          // zIndex: 10,
+          stroke: new Stroke({ // 边界样式
+            color: '#08C6F4',
+            width: 1
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#F1FFCD'
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style)</span>
+      }
+<span class="cstat-no" title="statement not covered" >      if (feature.values_.category === 2) {</span>
+        var style1 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          zIndex: 10,
+          stroke: new Stroke({ // 边界样式
+            color: '#08C6F4',
+            width: 1
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#CAFFE3'
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style1)</span>
+      }
+    }
+    // style: new Style({
+    //   stroke: new Stroke({
+    //     color: '#65FFFF',
+    //     width: 3
+    //   }),
+    //   fill: new Fill({
+    //     color: 'rgba(250, 250, 250, 0.85)'
+    //   })
+    // })
+  }),
+  // 湖泊
+  LakeSource: new VectorLayer({
+    zIndex: 10,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Asx_lakers&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: new Style({
+      // zIndex: 1,
+      stroke: new Stroke({
+        color: '#65FFFF',
+        width: 2
+      })
+    })
+  }),
+  // 河流
+  RiversSource: new VectorLayer({
+    zIndex: 15,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Asx_rivers&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: new Style({
+      // zIndex: 10,
+      stroke: new Stroke({
+        color: '#65FFFF',
+        width: 1
+      })
+    })
+  }),
+&nbsp;
+  // 行政区划
+  // DivisionSource: new VectorLayer({
+  //   zIndex: 10,
+  //   source: new VectorSource({
+  //     url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Alqs_countyboundary&amp;outputFormat=application%2Fjson',
+  //     format: new GeoJSON()
+  //   }),
+  //   style: new Style({
+  //     // zIndex: 10,
+  //     stroke: new Stroke({
+  //       color: '#65FFFF',
+  //       width: 3
+  //     })
+  //   })
+  // }),
+&nbsp;
+  // 行政区划
+  AreaSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Alqs_countyboundary&amp;maxFeatures=50&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature, resolution) {
+      // console.log(feature.id_, feature.values_)
+<span class="cstat-no" title="statement not covered" >      if (feature.id_ === 'lqs_countyboundary.1') {</span>
+        var style1 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          stroke: new Stroke({ // 边界样式
+            color: '#888888',
+            width: 1,
+            lineDash: [5],
+            lineDashOffset: 10
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#F5FFCC'
+          }),
+          text: new Text({
+            text: feature.get('名称'),
+            font: '18px sans-serif',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            overflow: false, // 超出面的部分不显示
+            stroke: new Stroke({
+              color: 'black',
+              width: 2
+            }),
+            fill: new Fill({
+              color: '#fff'
+            })
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style1)</span>
+      } else <span class="cstat-no" title="statement not covered" >if (feature.id_ === 'lqs_countyboundary.2') {</span>
+        var style2 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          stroke: new Stroke({ // 边界样式
+            color: '#888888',
+            width: 1,
+            lineDash: [5],
+            lineDashOffset: 10
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#D7FFE6'
+          }),
+          text: new Text({
+            text: feature.get('名称'),
+            font: '18px sans-serif',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            overflow: false, // 超出面的部分不显示
+            stroke: new Stroke({
+              color: 'black',
+              width: 2
+            }),
+            fill: new Fill({
+              color: '#fff'
+            })
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style2)</span>
+      } else <span class="cstat-no" title="statement not covered" >if (feature.id_ === 'lqs_countyboundary.3') {</span>
+        var style3 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          stroke: new Stroke({ // 边界样式
+            color: '#888888',
+            width: 1,
+            lineDash: [5],
+            lineDashOffset: 10
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#FEF1E3'
+          }),
+          text: new Text({
+            text: feature.get('名称'),
+            font: '18px sans-serif',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            overflow: false, // 超出面的部分不显示
+            stroke: new Stroke({
+              color: 'black',
+              width: 2
+            }),
+            fill: new Fill({
+              color: '#fff'
+            })
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style3)</span>
+      } else <span class="cstat-no" title="statement not covered" >if (feature.id_ === 'lqs_countyboundary.4') {</span>
+        var style4 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          stroke: new Stroke({ // 边界样式
+            color: '#888888',
+            width: 1,
+            lineDash: [5],
+            lineDashOffset: 10
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#C9E5BE'
+          }),
+          text: new Text({
+            text: feature.get('名称'),
+            font: '18px sans-serif',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            overflow: false, // 超出面的部分不显示
+            stroke: new Stroke({
+              color: 'black',
+              width: 2
+            }),
+            fill: new Fill({
+              color: '#fff'
+            })
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style4)</span>
+      } else <span class="cstat-no" title="statement not covered" >if (feature.id_ === 'lqs_countyboundary.5') {</span>
+        var style5 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          stroke: new Stroke({ // 边界样式
+            color: '#888888',
+            width: 1,
+            lineDash: [5],
+            lineDashOffset: 10
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#F5FFCC'
+          }),
+          text: new Text({
+            text: feature.get('名称'),
+            font: '18px sans-serif',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            overflow: false, // 超出面的部分不显示
+            stroke: new Stroke({
+              color: 'black',
+              width: 2
+            }),
+            fill: new Fill({
+              color: '#fff'
+            })
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style5)</span>
+      } else <span class="cstat-no" title="statement not covered" >if (feature.id_ === 'lqs_countyboundary.6') {</span>
+        var style6 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          stroke: new Stroke({ // 边界样式
+            color: '#888888',
+            width: 1,
+            lineDash: [5],
+            lineDashOffset: 10
+          }),
+          fill: new Fill({ // 矢量图层填充颜色，以及透明度
+            color: '#FEF1E3'
+          }),
+          text: new Text({
+            text: feature.get('名称'),
+            font: '18px sans-serif',
+            textAlign: 'center',
+            textBaseline: 'middle',
+            overflow: false, // 超出面的部分不显示
+            stroke: new Stroke({
+              color: 'black',
+              width: 2
+            }),
+            fill: new Fill({
+              color: '#fff'
+            })
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style6)</span>
+      }
+      // var style = new Style({
+      //   stroke: new Stroke({ // 边界样式
+      //     color: '#888888',
+      //     width: 1,
+      //     lineDash: [5],
+      //     lineDashOffset: 10
+      //   }),
+      //   text: new Text({
+      //     text: feature.get('名称'),
+      //     font: '18px sans-serif',
+      //     textAlign: 'center',
+      //     textBaseline: 'middle',
+      //     overflow: false, // 超出面的部分不显示
+      //     stroke: new Stroke({
+      //       color: 'black',
+      //       width: 2
+      //     }),
+      //     fill: new Fill({
+      //       color: '#fff'
+      //     })
+      //   })
+      // })
+      // feature.setStyle(style)
+    }
+  }),
+  // 主题小镇
+  ThemeSource: new VectorLayer({
+    zIndex: 15,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Aztgh_town&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature, resolution) {
+      // console.log(feature)
+&nbsp;
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        image: new Icon({
+          // anchor: [0.5, 0.5],
+          // crossOrigin: 'anonymous',
+          src: 'static/geologyIcon/ztxz_map.png',
+          offset: [0, 0],
+          size: [38, 77]
+        })
+        // image1: new Circle({
+        //   radius: 4,
+        //   fill: new Fill({
+        //     // color: 'rgba(255, 255, 255, 0.5)'
+        //   }),
+        //   stroke: new Stroke({
+        //     color: 'F759AB',
+        //     width: 3
+        //   })
+        // })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 游憩单元
+  RecreationSource: new VectorLayer({
+    zIndex: 6,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Aztgh_recreationcell&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#FF7A45',
+          width: 1,
+          lineDash: [5],
+          lineDashOffset: 10
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: 'rgba(255, 122, 69, 0.5)'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 核心保护区
+  ReserveSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Aztgh_corearea&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#C9E5BE'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 缓冲区
+  BufferSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Aztgh_bufferarea&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#D6FEE5'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 山前游憩区
+  MountainSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Aztgh_recreationarea&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#F5FFCC'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+&nbsp;
+  /// 平原地区
+&nbsp;
+  // 平原河漫
+  PlainRiverSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_plain_1&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#F1FF98'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 条带状平坝
+  DamSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_tableland_1&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#8AD7C7'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 宽谷垄岗
+  ValleyRidgeSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_tableland_2&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#BFCBBE'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 中谷圆弧状、坪状低丘
+  FlatLowHillSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_tableland_3&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#FFD865'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 平谷圆缓低丘
+  GentleLowHillSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_hill_1&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#F7EADC'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 宽谷圆顶中丘
+  ParietalColliculusSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_hill_2&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#F7E9C2'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 窄谷脊状低山
+  LowMountainSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_lowmountain_1&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#98B3D7'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // ”V“沟谷
+  ValleySource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Adm_lowmountain_2&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+<span class="cstat-no" title="statement not covered" >      console.info('featur111111111111111111111111111111111111e', feature)</span>
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 10,
+        stroke: new Stroke({
+          color: '#888888',
+          width: 1,
+          line: [5]
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: '#E92020'
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+&nbsp;
+  // 地势图
+  // 地势
+  TerrainSource: new VectorLayer({
+    zIndex: 5,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Ads_overview&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature) {
+      // console.info('featur111111111111111111111111111111111111e', feature)
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        zIndex: 10,
+        stroke: new Stroke({
+          color: Geothermal[feature.values_.min],
+          width: 1,
+          line: [0],
+          visible: false
+        }),
+        fill: new Fill({ // 矢量图层填充颜色，以及透明度
+          color: Geothermal[feature.values_.min]
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+    }
+  }),
+  // 定义图层
+  // this.AreaSource = AreaSource
+  // // 是否显示图层
+  // this.AreaSource.setVisible(this.isActive1)
+  // 乡镇
+  TownshipSource: new VectorLayer({
+    zIndex: 102,
+    source: new VectorSource({
+      url: 'http://192.168.40.142:8080/geoserver/lqs/ows?service=WFS&amp;version=1.0.0&amp;request=GetFeature&amp;typeName=lqs%3Alqs_townname&amp;maxFeatures=50&amp;outputFormat=application%2Fjson',
+      format: new GeoJSON()
+    }),
+    style: <span class="fstat-no" title="function not covered" >function (</span>feature, resolution) {
+      // console.log(feature)
+      var style = <span class="cstat-no" title="statement not covered" >new Style({</span>
+        // zIndex: 1,
+        image: new Circle({
+          radius: 4,
+          fill: new Fill({
+            color: 'rgba(255, 255, 255, 0.5)'
+          }),
+          stroke: new Stroke({
+            color: '#fafafa',
+            width: 1,
+            lineDash: [5],
+            lineDashOffset: 10
+          })
+        }),
+        text: new Text({
+          test: feature.get('level'),
+          text: feature.get('name'),
+          font: '14px Microsoft YaHei',
+          textAlign: 'right',
+          textBaseline: 'middle',
+          // textShadow: '10px 10px 0px #000',
+          stroke: new Stroke({
+            color: 'black',
+            width: 2
+          }),
+          fill: new Fill({
+            color: '#fff'
+          }),
+          offsetX: -8,
+          placement: 'point', // point 则自动计算面的中心k点然后标注  line 则根据面要素的边进行标注
+          overflow: false // 超出面的部分不显示
+        })
+      })
+<span class="cstat-no" title="statement not covered" >      feature.setStyle(style)</span>
+      // 区
+<span class="cstat-no" title="statement not covered" >      if (feature.values_.level === 4) {</span>
+        var style1 = <span class="cstat-no" title="statement not covered" >new Style({</span>
+          image: new Circle({
+            radius: 4,
+            fill: new Fill({
+              color: 'rgba(255, 255, 255, 0.5)'
+            }),
+            stroke: new Stroke({
+              color: '#fafafa',
+              width: 3
+            })
+          }),
+          text: new Text({
+            test: feature.get('level'),
+            text: feature.get('name'),
+            font: '16px Microsoft YaHei',
+            textAlign: 'right',
+            textBaseline: 'middle',
+            // textShadow: '10px 10px 0px #000',
+            stroke: new Stroke({
+              color: 'black',
+              width: 2
+            }),
+            fill: new Fill({
+              color: '#fff'
+            }),
+            offsetX: -8,
+            placement: 'point', // point 则自动计算面的中心k点然后标注  line 则根据面要素的边进行标注
+            overflow: false // 超出面的部分不显示
+          })
+        })
+<span class="cstat-no" title="statement not covered" >        feature.setStyle(style1)</span>
+      }
+    }
+  })
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Nov 03 2020 15:02:50 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

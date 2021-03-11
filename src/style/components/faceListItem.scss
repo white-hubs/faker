@@ -1,0 +1,28 @@
+.face_list_item_box{
+  width: vw(140);
+  // margin: 0 vw(20);
+  // margin: vh(20) 0;
+  margin-left: vw(20);
+  margin-bottom: vh(20);
+  .face_name{
+    text-align: left; 
+    font-size: px2rem(14);
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    // line-height: 32px;
+    color: #FFFFFF;
+    opacity: 0.65;
+  }
+  .face_value{
+    text-align: left;
+    font-size: px2rem(16);
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    // line-height: 32px;
+    color: #FFFFFF;
+    opacity: 0.85;
+  }
+}
+// .face_list_item_box :first-child{
+//   margin-top: vh(20);
+// }

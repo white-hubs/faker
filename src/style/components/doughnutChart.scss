@@ -1,0 +1,41 @@
+@import "../mixins/utils";
+@import "../mixins/mixins";
+.doughnut_box{
+  width: vw(389);
+  height: 100%;
+  position: relative;
+}
+.doughnut_box_img{
+  display: block;
+  // width: vw(145);
+  height: 77%;
+  position: absolute;
+  left: 10%;
+  top: vh(21);
+}
+.doughnut_chart{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 1660px)and (max-width: 1680px) {
+  .doughnut_box_img {
+    left: 9.5%;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 1659px){
+  .doughnut_box_img {
+    left: 6.8%;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px){
+  .doughnut_box_img {
+    left: 4.8%;
+  }
+}
+@media screen and (max-width: 1280px){
+  .doughnut_box_img {
+    left: 3.8%;
+  }
+}

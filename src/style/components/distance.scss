@@ -1,0 +1,40 @@
+@import "../mixins/utils";
+@import "../mixins/mixins";
+.distance_box{
+  // margin: 0 vw(10);
+  display: flex;
+  .distance_img{
+    width: vw(30);
+    height: vh(35);
+    .distance_svga{
+      display: block;
+      width: vw(30);
+      height: vh(35);
+    }
+  }
+  .distance_centens{
+    margin-left: vw(4);
+    margin-top: vh(8);
+    .distance_title{
+      text-align: left;
+      height: vw(16);
+      font-size: 12px;
+      font-family: Microsoft YaHei;
+      font-weight: 400;
+      line-height: vh(16);
+      color: #FAFAFA;
+      opacity: 0.85;
+    }
+    .distance_num{
+      text-align: left;
+      margin-top: vh(5);
+      height: vh(19);
+      font-size: vw(16);
+      font-family: Design System A 500R;
+      font-weight: 400;
+      line-height: vh(19);
+      color: #06F3FC;
+      opacity: 1;
+    }
+  }
+}

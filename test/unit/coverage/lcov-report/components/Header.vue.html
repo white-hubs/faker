@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for components/Header.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\index.html">All files</a> / <a href="index.html">components</a> Header.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div class="home_header"&gt;
+    &lt;div class="home_header_bg"&gt;
+      &lt;div class="headerr_a_list"&gt;
+        &lt;!-- exact严格模式 :active-class绑定匹配路由之后的样式--&gt;
+        &lt;div @click="toPushIndex(0)" class="header_a_item" v-bind:class="{ header_active: toNum==0 }"&gt;首页&lt;/div&gt;
+        &lt;div @click="toPushIndex(1)" class="header_a_item" v-bind:class="{ header_active: toNum==1 }"&gt;地质信息&lt;/div&gt;
+        &lt;div @click="toPushIndex(2)" class="header_a_item" v-bind:class="{ header_active: toNum==2 }"&gt;决策管理&lt;/div&gt;
+        &lt;div @click="toPushIndex(3)" class="header_a_item" v-bind:class="{ header_active: toNum==3 }"&gt;管理后台&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="headerr_a_title"&gt;
+        &lt;!-- &lt;div class="headerr_title"&gt; --&gt;
+          龙泉山城市森林公园地址信息系统
+        &lt;!-- &lt;/div&gt; --&gt;
+      &lt;/div&gt;
+      &lt;div class="headerr_user_box"&gt;
+        &lt;div class="header_time"&gt;
+          &lt;div class="header_time_date"&gt;{{nowDate}}&lt;/div&gt;
+          &lt;div class="header_time_week"&gt;{{nowWeek}}&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="header_user" @click="handleClick"&gt;
+          &lt;img class="header_user_img" src="../assets/index/head_default.png" alt=""&gt;
+          &lt;div class="header_user_name"&gt;您好&lt;/div&gt;
+          &lt;div class="header_user_code"&gt;{{logintext}}&lt;/div&gt;
+          &lt;div class="header_user_down" v-bind:class="{ header_user_up: isActive }"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="header_user_logout" v-show="isActive" @click="handleLogout"&gt;
+            &lt;img class="logout_img" src="../assets/index/logout.png" alt=""&gt;
+            &lt;div class="logout_word" @click="loginout"&gt;退出登录&lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+export default {
+  name: 'Header',
+<span class="fstat-no" title="function not covered" >  data () {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      isActive: false,
+      nowWeek: '',
+      nowDate: '',
+      isToActive: true,
+      num: 0
+    }
+  },
+  props: [
+    'toNum'
+  ],
+<span class="fstat-no" title="function not covered" >  mounted () {</span>
+<span class="cstat-no" title="statement not covered" >    this.setNowTimes()</span>
+  },
+  methods: {
+<span class="fstat-no" title="function not covered" >    toPushIndex (e) {</span>
+<span class="cstat-no" title="statement not covered" >      if (e === 0) {</span>
+<span class="cstat-no" title="statement not covered" >        this.$router.push('/index')</span>
+<span class="cstat-no" title="statement not covered" >      } else if (e === 1) {</span>
+<span class="cstat-no" title="statement not covered" >        this.$router.push('/geology')</span>
+<span class="cstat-no" title="statement not covered" >      } else if (e === 2) {</span>
+<span class="cstat-no" title="statement not covered" >        this.$router.push('/decisionMaking')</span>
+<span class="cstat-no" title="statement not covered" >      } else if (e === 3) {</span>
+<span class="cstat-no" title="statement not covered" >        this.$router.push('/console')</span>
+      }
+    },
+    // 点击切换页面样式
+<span class="fstat-no" title="function not covered" >    handleClick () {</span>
+<span class="cstat-no" title="statement not covered" >      if (this.isActive) {</span>
+<span class="cstat-no" title="statement not covered" >        this.isActive = false</span>
+      } else {
+<span class="cstat-no" title="statement not covered" >        this.isActive = true</span>
+      }
+    },
+    // 退出登录
+<span class="fstat-no" title="function not covered" >    handleLogout () {</span>
+<span class="cstat-no" title="statement not covered" >      console.info('this.logout')</span>
+    },
+    // 获取当前日期星期
+<span class="fstat-no" title="function not covered" >    setNowTimes () {</span>
+<span class="cstat-no" title="statement not covered" >      let myDate = new Date()</span>
+<span class="cstat-no" title="statement not covered" >      let wk = myDate.getDay()</span>
+<span class="cstat-no" title="statement not covered" >      let yy = String(myDate.getFullYear())</span>
+<span class="cstat-no" title="statement not covered" >      let mm = myDate.getMonth() + 1</span>
+<span class="cstat-no" title="statement not covered" >      let dd = String(myDate.getDate() &lt; 10 ? '0' + myDate.getDate() : myDate.getDate())</span>
+<span class="cstat-no" title="statement not covered" >      let weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']</span>
+<span class="cstat-no" title="statement not covered" >      let week = weeks[wk]</span>
+<span class="cstat-no" title="statement not covered" >      this.nowDate = yy + '年' + mm + '月' + dd + '日'</span>
+<span class="cstat-no" title="statement not covered" >      this.nowWeek = week</span>
+    },
+<span class="fstat-no" title="function not covered" >    loginout () {</span>
+<span class="cstat-no" title="statement not covered" >      this.$router.push('/')</span>
+<span class="cstat-no" title="statement not covered" >      window.sessionStorage.token = ''</span>
+    }
+  },
+  computed: {
+<span class="fstat-no" title="function not covered" >    logintext () {</span>
+<span class="cstat-no" title="statement not covered" >      return window.sessionStorage.token</span>
+    }
+  }
+}
+&lt;/script&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Nov 03 2020 15:02:50 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\sorter.js"></script>
+</body>
+</html>

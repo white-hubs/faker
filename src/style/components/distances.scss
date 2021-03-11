@@ -1,0 +1,124 @@
+.donut_chart_data{
+	color:#fff;
+	width:100%;
+	height:100%;
+	.chart_box{
+		// width: vw(320);
+		margin-right: vw(30);
+		.chart_header{
+			display:flex;
+			.header_icon{
+				margin-top: vh(40);
+				margin-right: vw(10);
+				width: 8px; height: 8px;
+				border-radius: 50%;
+				padding: 5px;
+				border: 4px solid;
+				background-color: currentColor;
+				background-clip:content-box;
+			}
+			.header_name{
+				font-size: px2rem(18);
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				line-height: vh(24);
+				color: #FFFFFF;
+				opacity: 0.85;
+				margin-top: vh(38);
+			}
+			.header_num{
+				margin-left: vw(10);
+				font-size: px2rem(18);
+				font-family: Microsoft YaHei;
+				font-weight: 400;
+				line-height: vh(24);
+				color: #FFFFFF;
+				opacity: 0.85;
+				margin-top: vh(38);
+			}
+		}
+		.chart_center{
+			// display: flex;
+			// flex-wrap: wrap;
+			// padding-bottom: vh(20);
+			
+			background: #102352;
+			border: 1px solid #324063;
+			margin-top: vh(20);
+			height: vh(230);
+			overflow-y: auto;
+			// margin-right: vw(30);
+			// padding-right: vh(30);
+			.chart_item{
+				// margin-right: vw(20);
+				// margin-top: vh(30);
+				margin: px2rem(10);
+				.chart_item_header{
+					height: vh(40);
+					// width: vw(320);
+					background: #324063;
+					display: flex;
+					justify-content: space-between;
+					.item_header_name{
+						font-family: Microsoft YaHei;
+						font-weight: 400;
+						line-height: vh(40);
+						opacity: 0.85;
+						margin-left: vw(10);
+						font-size: px2rem(14);
+						color: #FFFFFF;
+					}
+					.item_header_num{
+						line-height: vh(40);
+						opacity: 0.85;
+						margin-right: vw(10);
+						font-size: px2rem(14);
+						font-family: Microsoft YaHei;
+						font-weight: bold;
+						color: #FFFFFF;
+					}
+				}
+				.chart_item_center{
+					display: flex;
+					justify-content: space-between;
+					.item_center_name{
+						// height: 19px;
+						margin-left: vw(10);
+						font-size: px2rem(14);
+						font-family: Microsoft YaHei;
+						font-weight: 400;
+						line-height: vh(40);
+						color: #FFFFFF;
+						opacity: 0.65;
+					}
+					.item_center_num{
+						font-size: px2rem(14);
+						font-family: Microsoft YaHei;
+						font-weight: 400;
+						line-height: vh(40);
+						color: #FFFFFF;
+						opacity: 0.65;
+						margin-right: vw(12);
+					}
+				}
+			}
+		}
+		/*滚动条样式*/
+		.chart_center::-webkit-scrollbar {
+			width: 8px;    
+			/*height: 4px;*/
+			margin-right: 4px;
+		}
+		.chart_center::-webkit-scrollbar-thumb {
+			border-radius: 4px;
+			-webkit-box-shadow: inset 0 0 5px#3D5473;
+			background: #3D5473;
+		}
+		.chart_center::-webkit-scrollbar-track {
+			-webkit-box-shadow: inset 0 0 5px #0E1F48;
+			border-radius: 0;
+			background: #0E1F48;
+	
+		}
+	}
+}

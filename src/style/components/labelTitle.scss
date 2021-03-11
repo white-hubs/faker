@@ -1,0 +1,30 @@
+@import "../mixins/utils";
+@import "../mixins/mixins";
+.labelTitle_box{
+  margin: 0 vw(10);
+  background-image:url(~@/assets/index/title.png);
+  background-size: 100% 100%;
+  opacity: 1;
+  display: flex;
+  .label_title{
+    line-height: vh(30);
+    margin-left: vw(10);
+    font-size: px2rem(14);
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: #FFFFFF;
+    opacity: 1;
+  }
+  .label_icon_box{
+    width: vw(169);
+    height: vh(30);
+    margin-left:vw(6);
+    .label_icon{
+      margin-top: vh(13);
+      height: vh(5);
+      opacity: 1;
+      background-image:url(~@/assets/index/line.png);
+      background-size: 100% 100%;
+    }
+  }
+}

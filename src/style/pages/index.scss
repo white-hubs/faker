@@ -1,0 +1,322 @@
+@import "../mixins/utils";
+@import "../mixins/mixins";
+.home_content_index{
+    display: flex;
+    justify-content: space-between;
+    overflow-y: auto;
+    position: relative;
+    // background-image:url(~@/assets/index/home_bg.png);
+    // background-size: 100% 100%;
+    .home_index_header{
+      position: absolute;
+      width: vw(728);
+      // height: vh(80);
+      left: 50%;
+      top:vh(73);
+      margin-left: vw(-364);
+      display: flex; 
+      justify-content: space-between;
+      z-index: 999;
+    }
+    .home_content_map{
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url(~@/assets/index/home_bg.png);
+      background-size: 100% 100%;
+    }
+    .home_index_clickBut{
+      position: absolute;
+      width: vw(300);
+      height: vh(70);
+      bottom: vh(108);
+      right: vw(472);
+      display: flex;
+      justify-content: space-between;
+      z-index: 999;
+      .index_clickBut_item{
+        cursor:pointer;
+        .divbgsvga{
+          width: vw(80);
+          height: vh(80);
+          // background-image:url(~@/assets/index/aqq_n.png);
+          // background-size: 100% 100%;
+        }
+        .divbg1{
+          width: vw(80);
+          height: vh(80);
+          background-image:url(~@/assets/index/aqq_n.png);
+          background-size: 100% 100%;
+        }
+        // .divbg1_s{
+        //   background-image:url(~@/assets/index/aqq_s.png);
+        //   background-size: 100% 100%;
+        // }
+        .divbg2{
+          width: vw(80);
+          height: vh(80);
+          background-image:url(~@/assets/index/jbaqq_n.png);
+          background-size: 100% 100%;
+        }
+        // .divbg2_s{
+        //   background-image:url(~@/assets/index/jbaqq_s.png);
+        //   background-size: 100% 100%;
+        // }
+        .divbg3{
+          width: vw(80);
+          height: vh(80);
+          background-image:url(~@/assets/index/aqjcq_n.png);
+          background-size: 100% 100%;
+        }
+        // .divbg3_s{
+        //   background-image:url(~@/assets/index/aqjcq_s.png);
+        //   background-size: 100% 100%;
+        // }
+        div{
+          width: vw(80);
+          height: vh(19);
+          text-align: center;
+          font-size: px2rem(14);
+          font-family: Microsoft YaHei;
+          font-weight: 400;
+          line-height: vh(19);
+          color: #FAFAFA;
+          opacity: 0.65;
+        }
+      }
+    }
+    .home_index_imgbg{
+      position: absolute;
+      display: block;
+      width: vw(494);
+      height: vh(796);
+      left: 50%;
+      margin-left: vw(-247);
+      top: vh(142);
+    }
+    .home_left{
+        width: vw(390);
+        margin-left: vw(20);
+        margin-top: vh(56);
+        z-index: 999;
+        .left_planning{
+          position: relative;
+          // height: vw(242);
+          .left_plann_title{
+            display: flex;
+            justify-content: space-around;
+            margin-top: vh(11);
+          }
+          .left_plann_content{
+            padding-top: vh(8);
+            margin: 0 vw(10);
+            // padding-bottom: px2rem(26);
+            .left_plann_item{
+              display: flex;
+              margin-top: vh(16);
+              img{
+                display: block;
+                width: px2rem(16);
+                height: px2rem(16);
+                margin-left: vw(13);
+                margin-top: vh(2);
+              }
+              div{
+                margin-left: vw(6);
+                // width: 126px;
+                height: vh(19);
+                font-size: px2rem(14);
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                line-height: vh(19);
+                color: #FFFFFF;
+                opacity: 0.65;
+              }
+            }
+            .left_plann_item:last-child{
+              padding-bottom: vh(28);
+            }
+          }
+        }
+        .left_geothermal{
+          position: relative;
+          margin-top: vh(10);
+          height: vh(668);
+          // height: vh(524);
+          .geothermal_type_box{
+            margin: 0 vw(10);
+            margin-top: vh(17);
+            display: flex;
+            .geothermal_img{
+              width: vw(56);
+              height: vw(56);
+              img{
+                display: block;
+                width: vw(56);
+                height: vw(56);
+              }
+            }
+            .geothermal_centens{
+              margin-left: vw(10);
+              .geothermal_title{
+                text-align: left;
+                margin-top: vh(3);
+                font-size: px2rem(14);
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                line-height: vh(19);
+                color: #FFFFFF;
+                opacity: 0.85;
+              }
+              .geothermal_num{
+                margin-top: vh(6);
+                text-align: left;
+                // width: 180px;
+                height: vh(26);
+                font-size: px2rem(20);
+                font-family: Microsoft YaHei;
+                font-weight: 400;
+                line-height: vh(26);
+                color: #FCC83D;
+                opacity: 0.85;
+              }
+            }
+          }
+          .geothermal_title_box{
+            cursor: pointer;
+            margin: 0 vw(10);
+            margin-top: vh(28);
+            padding-bottom: vh(5);
+            display: flex;
+            div{
+              width: vw(176);
+              height: vh(21);
+              font-size: px2rem(16);
+              font-family: Microsoft YaHei;
+              font-weight: 400;
+              line-height: vh(21);
+              color: rgba(255, 255, 255, 0.85);
+              opacity: 1;
+            }
+            img{
+              width: vw(20);
+              height: vw(20);
+              display: block;
+              margin-left: vw(10);
+            }
+          }
+        }
+        .left_geothermal:last-child{
+          padding-bottom: vh(20);
+        }
+    }
+    .home_right{
+        // height: vh(300);
+        z-index: 999;
+        width: vw(390);
+        margin-right: vw(20);
+        margin-top: vh(56);
+        .right_chemistry{
+          position: relative;
+          margin: auto;
+          .chemistry_bar{
+            width: 100%;
+            height: vh(257);
+          }
+        }
+        .right_soil{
+          position: relative;
+          margin-top: vh(10);
+          .soil_tab{
+            display: flex;
+            margin-left: vw(10);
+            margin-top: vh(20);
+            .soil_tab_item{
+              background-image:url(~@/assets/index/tab_n.png);
+              background-size: 100% 100%;
+              color: #06F3FC;
+              font-size: px2rem(14);
+              line-height: vh(28);
+              padding: 0 vh(13);
+              opacity: 0.8;
+              cursor:pointer;
+            }
+            .soil_tab_active{
+              background-image:url(~@/assets/index/tab_s.png);
+              background-size: 100% 100%;
+              color: #FCC83D;
+              font-size: px2rem(14);
+              line-height: vh(28);
+              opacity: 0.8;
+            }
+          }
+          .tabCon{
+            height: vh(211);
+            width: 100%;
+            .tabCon_item{
+              width: 100%;
+              height: vh(211);
+            }
+            display: flex;
+            overflow: hidden;
+          }
+        }
+        .right_landscape{
+          position: relative;
+          margin-top: vh(10);
+          .landscape_list{
+            margin-top: vh(23);
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+          }
+        }
+    }
+    .home_content_bg{
+      background-image:url(~@/assets/index/content_bg.png);
+      background-size: 100% 100%;
+    }
+    .title_height{
+      height:vh(10);
+    }
+    .bg_left{
+      width: vw(410);
+      height: 100%;
+      background-image:url(~@/assets/index/mask_left.png);
+      background-size: 100% 100%;
+      position: absolute;
+      left: 0;
+      z-index: 998;
+    }
+    .bg_right{
+      width: vw(410);
+      height: 100%;
+      background-image:url(~@/assets/index/mask_right.png);
+      background-size: 100% 100%;
+      position: absolute;
+      right: 0;
+      z-index: 998;
+    }
+    .bg_top{
+      width: 100%;
+      height: vh(237);
+      background-image:url(~@/assets/index/mask_top.png);
+      background-size: 100% 100%;
+      position: absolute;
+      top: 0;
+      z-index: 998;
+    }
+    .bg_buttom{
+      width: 100%;
+      height: vh(140);
+      background-image:url(~@/assets/index/mask_bottom.png);
+      background-size: 100% 100%;
+      position: absolute;
+      bottom: 0;
+      z-index: 998;
+    }
+}

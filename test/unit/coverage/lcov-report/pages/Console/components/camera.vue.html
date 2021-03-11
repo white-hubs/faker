@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for pages/Console/components/camera.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">pages/Console/components</a> camera.vue
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+&lt;div class="usermodel"&gt;
+    &lt;div class="console_box"&gt;
+      &lt;div class="usertop"&gt;
+        关键词搜索：
+        &lt;el-input  v-model="inputinner" placeholder="请输入账号名称"&gt;&lt;/el-input&gt;
+        &lt;el-button type="primary"&gt;搜索&lt;/el-button&gt;
+        &lt;el-button&gt;重置&lt;/el-button&gt;
+      &lt;/div&gt;
+      &lt;div class="tablist"&gt;
+        &lt;div class="tablist-top"&gt;
+          &lt;p&gt;摄像头列表&lt;/p&gt;
+          &lt;el-button @click="cameraAdd"&gt;新增摄像头&lt;/el-button&gt;
+        &lt;/div&gt;
+        &lt;el-table
+          :data="tableData"
+          stripe
+          type="index"
+          style="width: 100%"
+          :row-style="{height: '40px'}"
+          &gt;
+          &lt;template slot="empty" &gt;
+            &lt;img  src="../../../assets/icons/null.png" alt="" /&gt;
+            &lt;p class="empty-p"&gt;暂无数据&lt;/p&gt;
+          &lt;/template&gt;
+          &lt;el-table-column prop="id" label="序号" width="170" type="index"&gt;&lt;/el-table-column&gt;
+          &lt;el-table-column prop="username" label="设备编号" width="250" &gt;&lt;/el-table-column&gt;
+          &lt;el-table-column prop="userpassword" label="设备名称" width="250"&gt;&lt;/el-table-column&gt;
+          &lt;el-table-column prop="user" label="负责人"  width='200'&gt;&lt;/el-table-column&gt;
+          &lt;el-table-column prop="updatedAt" label="安装时间" width='200'&gt;&lt;/el-table-column&gt;
+          &lt;el-table-column prop="updatedAt" label="设备状态" width='200'&gt;
+            &lt;template slot-scope="scope"&gt;
+              &lt;!-- &lt;img src="../../../../static/dzxxTree/layer_15.png" alt=""&gt; --&gt;
+              &lt;span style="margin-left: 10px"&gt;{{ scope.row.updatedAt }}&lt;/span&gt;
+            &lt;/template&gt;&lt;/el-table-column&gt;
+          &lt;el-table-column prop="updatedAt" label="备注" &gt;&lt;/el-table-column&gt;
+          &lt;el-table-column
+          label="操作"
+          align="left"
+           width="200"
+           &gt;
+          &lt;template slot-scope="{ row }"&gt;
+            &lt;el-tooltip content="查看" placement="bottom"&gt;
+              &lt;i class="hk-icon-preview" @click="handleClickSee(row)" /&gt;
+            &lt;/el-tooltip&gt;
+            &lt;el-tooltip content="编辑" placement="bottom"&gt;
+              &lt;i class="hk-icon-edit" @click="handleClickEdit(row)" /&gt;
+            &lt;/el-tooltip&gt;
+            &lt;el-tooltip content="禁用" placement="bottom"&gt;
+              &lt;i class="hk-icon-disable" @click="handleClickDisable(row)" v-if="disable"/&gt;
+            &lt;/el-tooltip&gt;
+            &lt;el-tooltip content="启用" placement="bottom"&gt;
+              &lt;i class="hk-icon-enable" @click="handleClickEnable(row)" v-if="!disable"/&gt;
+            &lt;/el-tooltip&gt;
+            &lt;el-tooltip content="删除" placement="bottom"&gt;
+              &lt;i class="hk-icon-delete" @click="handleClickDelete(row)" /&gt;
+            &lt;/el-tooltip&gt;
+            &lt;el-tooltip content="定位" placement="bottom"&gt;
+              &lt;i class="hk-icon-position" @click="handleClickPosition(row)"/&gt;
+            &lt;/el-tooltip&gt;
+          &lt;/template&gt;
+          &lt;/el-table-column&gt;
+        &lt;/el-table&gt;
+        &lt;el-pagination
+        class="msg-pagination-container"
+        :background= isBackground
+        layout="sizes, total, prev, pager, next"
+        :total= 0
+        :page-sizes="[15]"
+        :page-size="data.size"
+        :current-page="data.page"
+        :hide-on-single-page = true
+        @current-change="handleCurrentChange"
+        &gt;
+        &lt;!-- total, prev, pager, next --&gt;
+      &lt;/el-pagination&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="deleted"&gt;
+      &lt;el-dialog
+      :visible.sync="DeletedialogVisible"
+      width="20%"
+      top='35vh'
+      :before-close="DeletedhandleClose"&gt;
+      &lt;div class="deletedTo"&gt;&lt;img src="../../../assets/icons/warninig.png" alt=""&gt;&lt;span&gt;删除设备&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="deletedBu"&gt;删除后该设备所有信息将无法恢复，确认是否删除？&lt;/div&gt;
+      &lt;span slot="footer" class="dialog-footer"&gt;
+        &lt;el-button @click="DeletedialogVisible = false"&gt;取 消&lt;/el-button&gt;
+        &lt;el-button type="primary" @click="DeletedialogVisible = false" &gt;确 定&lt;/el-button&gt;
+      &lt;/span&gt;
+    &lt;/el-dialog&gt;
+    &lt;!-- //禁用 --&gt;
+        &lt;el-dialog
+      :visible.sync="DisabledialogVisible"
+      width="20%"
+      top='35vh'
+      :before-close="DisablehandleClose"&gt;
+      &lt;div class="deletedTo"&gt;&lt;img src="../../../assets/icons/warninig.png" alt=""&gt;&lt;span&gt;禁用设备&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="deletedBu"&gt;禁用后该设备将不在信息平台展示，确认是否执行？&lt;/div&gt;
+      &lt;span slot="footer" class="dialog-footer"&gt;
+        &lt;el-button @click="DisabledialogVisible = false"&gt;取 消&lt;/el-button&gt;
+        &lt;el-button type="primary" @click="Disable"&gt;确 定&lt;/el-button&gt;
+      &lt;/span&gt;
+    &lt;/el-dialog&gt;
+    &lt;!-- //启用 --&gt;
+    &lt;el-dialog
+      :visible.sync="EnabledialogVisible"
+      width="20%"
+      top='35vh'
+      :before-close="EnablehandleClose"&gt;
+      &lt;div class="deletedTo"&gt;&lt;img src="../../../assets/icons/warninig.png" alt=""&gt;&lt;span&gt;启用设备&lt;/span&gt;&lt;/div&gt;
+      &lt;div class="deletedBu"&gt;解禁后该设备将恢复在信息平台展示，确认是否执行？&lt;/div&gt;
+      &lt;span slot="footer" class="dialog-footer"&gt;
+        &lt;el-button @click="EnabledialogVisible = false"&gt;取 消&lt;/el-button&gt;
+        &lt;el-button type="primary" @click="Enable"&gt;确 定&lt;/el-button&gt;
+      &lt;/span&gt;
+    &lt;/el-dialog&gt;
+    &lt;/div&gt;
+    &lt;div class="cameraForm" v-if="cameraForm"&gt;
+      &lt;cameraAdd   @cameras="getcameraFormSon"&gt;&lt;/cameraAdd&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+<span class="cstat-no" title="statement not covered" >import { mapActions } from 'vuex'</span>
+<span class="cstat-no" title="statement not covered" >import cameraAdd from '../Addcomponents/cameraAdd'</span>
+export default {
+  name: 'user',
+<span class="fstat-no" title="function not covered" >  data () {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      inputinner: '',
+      isBackground: true,
+      DeletedialogVisible: false,
+      DisabledialogVisible: false,
+      EnabledialogVisible: false,
+      disable: true,
+      cameraForm: false,
+      menulists:
+        {
+          title: '新增摄像头',
+          name: '新增摄像头',
+          routeName: 'cameraAdd'
+        },
+&nbsp;
+      Editid: {},
+      Seeid: {},
+      tableData: [
+        {
+          username: 'yanquan',
+          userpassword: '123456',
+          user: '晏权',
+          updatedAt: '2020'
+        },
+        {
+          username: 'yanquan',
+          userpassword: '123456',
+          user: '晏权',
+          updatedAt: '2020'
+        },
+        {
+          username: 'yanquan',
+          userpassword: '123456',
+          user: '晏权',
+          updatedAt: '2020'
+        },
+        {
+          username: 'yanquan',
+          userpassword: '123456',
+          user: '晏权',
+          updatedAt: '2020'
+        }
+      ],
+      data: {
+        modelName: '',
+        active: true,
+        size: 15,
+        page: 1
+      }
+    }
+  },
+  methods: {
+<span class="fstat-no" title="function not covered" >    handleCurrentChange (val) {</span>
+<span class="cstat-no" title="statement not covered" >      this.data.page = val</span>
+      // this.queryConsole()
+    },
+<span class="fstat-no" title="function not covered" >    handleClickDelete () {</span>
+<span class="cstat-no" title="statement not covered" >      this.DeletedialogVisible = true</span>
+    },
+<span class="fstat-no" title="function not covered" >    DeletedhandleClose () {</span>
+<span class="cstat-no" title="statement not covered" >      this.DeletedialogVisible = false</span>
+    },
+<span class="fstat-no" title="function not covered" >    handleClickDisable () {</span>
+<span class="cstat-no" title="statement not covered" >      this.DisabledialogVisible = true</span>
+    },
+<span class="fstat-no" title="function not covered" >    DisablehandleClose () {</span>
+<span class="cstat-no" title="statement not covered" >      this.DisabledialogVisible = false</span>
+    },
+<span class="fstat-no" title="function not covered" >    handleClickEnable () {</span>
+<span class="cstat-no" title="statement not covered" >      this.EnabledialogVisible = true</span>
+    },
+<span class="fstat-no" title="function not covered" >    EnablehandleClose () {</span>
+<span class="cstat-no" title="statement not covered" >      this.EnabledialogVisible = false</span>
+    },
+    // 禁用/
+<span class="fstat-no" title="function not covered" >    Disable () {</span>
+<span class="cstat-no" title="statement not covered" >      this.disable = false</span>
+<span class="cstat-no" title="statement not covered" >      this.DisablehandleClose()</span>
+    },
+    // 启用
+<span class="fstat-no" title="function not covered" >    Enable () {</span>
+<span class="cstat-no" title="statement not covered" >      this.disable = true</span>
+<span class="cstat-no" title="statement not covered" >      this.EnablehandleClose()</span>
+    },
+    ...mapActions({
+      handleOpen2: 'editableTabs'
+    }),
+<span class="fstat-no" title="function not covered" >    cameraAdd () {</span>
+      // this.$router.push()
+<span class="cstat-no" title="statement not covered" >      this.cameraForm = true</span>
+    },
+<span class="fstat-no" title="function not covered" >    getcameraFormSon (data) {</span>
+<span class="cstat-no" title="statement not covered" >      this.cameraForm = data</span>
+    }
+  },
+  components: {
+    cameraAdd
+  },
+<span class="fstat-no" title="function not covered" >  created () {</span>
+<span class="cstat-no" title="statement not covered" >    this.cameraForm = false</span>
+  }
+}
+&lt;/script&gt;
+&lt;style lang="scss"&gt;
+  /deep/ .cell {max-height: 40px !important;overflow: auto !important;}
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Nov 03 2020 15:02:50 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+.dataViewDialog_box{
+    position: relative;
+    top: vh(130);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: vw(640);
+    // height: vh(677);
+    background:#0E1F48;
+    margin: 0 auto;
+    height: vh(480);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    .dialog_header{
+        display: flex;
+        justify-content:space-between;
+        height: vh(40);
+        background-color: #004070;
+        .dialog_header_title{
+            margin-left: vw(20);
+            line-height: vh(40);
+            font-size: px2rem(14);
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            color: #08C6F4;
+            // letter-spacing: 100px;
+            opacity: 1;
+        }
+        .dialog_header_img{
+            margin-right: vw(20);
+            width: px2rem(10);
+            height: px2rem(10);
+            margin-top: vh(15);
+        }
+    }
+    .dialog_center{
+        background-color: #0E1F48;
+        height: vh(440);
+        width: calc(100% - 4px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+}
+
+.dataViewTitle_box{
+    display: flex;
+    justify-content: space-between;
+    margin-top: vh(20);
+    .dataViewName{
+        font-size: px2rem(14);
+        color: #08C6F4;
+        margin-left: vw(20);
+    }
+    .dataViewNum{
+        display: flex;
+        margin-right: vw(20);
+        .viewUnit{
+            font-size: px2rem(14);
+            font-family: Microsoft YaHei;
+            font-weight: 400;
+            line-height: vh(24);
+            color: #FFFFFF;
+            opacity: 1;
+            margin-left: vw(8);
+        }
+        .viewNumN{
+            font-size: px2rem(18);
+            font-family: Microsoft YaHei;
+            font-weight: bold;
+            line-height: vh(24);
+            color: #FFFFFF;
+            opacity: 1;
+            margin-left: vw(8);
+        }
+    }
+}
